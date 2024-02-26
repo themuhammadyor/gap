@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ opinion.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ opinion.author }}</h6>
+        <p class="card-text">{{ opinion.body }}</p>
+        <a href="#" class="card-link">Comments</a>
+        <a href="{% url 'gap:opinion-like' opinion.pk %}" class="card-link">
+            {% if opinion.like_count == 0 %}
+                <i class="fa-regular fa-heart"></i>
+            {% else %}
+                <i class="fa-solid fa-heart"></i>
+            {% endif %}
+        </a> <span>{{ opinion.like_count }}</span>
+    </div>
+</div>
